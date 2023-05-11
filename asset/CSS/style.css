@@ -1,0 +1,729 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Inline+One:ital@1&family=Montserrat+Alternates&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'montserrat', sans-serif;
+	overflow-x: hidden;
+}
+
+/*Navbar*/
+nav{
+	display: flex;
+	background-color: rgb(252, 241, 232);
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	width: 100%;
+	z-index: 4;
+}
+
+nav .logo img{
+	width: 16vh;
+	margin: 1vh 0;
+}
+
+nav ul{
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	width: 40%;
+	position: relative;
+	transition: all 1s;
+
+}
+
+nav ul li{
+	display: flex;
+	width: 19vh;
+	padding: 2vh 0;
+	align-items: center;
+	justify-content: space-evenly;
+	cursor: pointer;
+}
+
+nav ul a{
+	color: rgb(36, 34, 33);
+	text-decoration: none;
+	display: flex;
+}
+
+nav ul li:hover{
+	border: 2px solid orangered;
+}
+
+nav ul a:hover{
+	color: black;
+	font-weight: 500;
+}
+
+/*Hamburger menu*/
+nav .menu-toggle{
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 21px;
+	position: relative;
+}
+
+nav .menu-toggle input{
+	position: absolute;
+	left: -3px;
+	right: -3px;
+	bottom: -1px;
+	top: -1px;
+	opacity: 0;
+	z-index: 2;
+}
+
+nav .menu-toggle span{
+	display: block;
+	width: 28px;
+	height: 3px;
+	border-radius: 1px;
+	background-color: orangered;
+	transition: all .5s;
+}
+
+nav .menu-toggle span:nth-child(2){
+	transform-origin: top left;
+}
+
+nav .menu-toggle span:nth-child(4){
+	transform-origin: bottom left;
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(2){
+	transform: rotate(45deg) translateY(-1px);
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(3){
+	transform: scale(0);
+}
+
+nav .menu-toggle input:checked ~ span:nth-child(4){
+	transform: rotate(-45deg);
+}
+
+/*MAIN*/
+main{
+	z-index: -4;
+}
+
+/*Beranda*/
+article#beranda{
+	display: flex;
+	justify-content: space-around;
+	padding: 7vh 2vh 2vh 2vh;
+	/*z-index: -4;*/
+}
+
+article#beranda img{
+	width: 40%;
+	z-index: -4;
+}
+
+article#beranda .beranda-desc{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 11vh;
+	line-height: 1.6;
+	z-index: 0;
+}
+
+article#beranda .beranda-desc h1{
+	font-weight: 900;
+	font-size: 50px;
+	transition: all .3s;
+	cursor: pointer;
+}
+
+article#beranda .beranda-desc h1:hover{
+	transform: scale(1.02);
+	color: orangered;
+}
+
+/*Produk*/
+article#produk{
+	background-color: rgb(250, 227, 207);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: -4;
+	padding-bottom: 15px;
+}
+
+article#produk h1{
+	text-transform: uppercase;
+	font-size: 2em;
+	margin: 2vh 0 0 0;
+	font-weight: 800;
+	transition: all 1s;
+}
+
+article#produk h1:hover{
+	letter-spacing: 5px;
+}
+
+article#produk .listProduk{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+article#produk section{
+	border: 2px solid rgb(209, 192, 178);
+	background-color: white;
+	margin: 3vh;
+	width: 20%;
+	padding: 1vh;
+	text-align: center;
+	border-radius: 5%;
+	transition: all .3s;
+}
+
+article#produk section img{
+	width: 25vh;
+	height: 25vh;
+	object-fit: cover;
+}
+
+article#produk section.bTambahProduk{
+	min-height: 40vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 5em;
+	font-weight: 600;
+	opacity: .7;
+	border-style: dashed;
+	cursor: pointer;
+}
+
+article#produk .listProduk section:hover{
+	transform: scale(1.05);
+}
+
+.fTambahProduk{
+	display: none;
+	position: fixed;
+	flex-direction: column;
+	align-items: center;
+	top: 35vh;
+	width: auto;
+	height: auto;
+	background-color: #faf7f5;
+	padding: 20px;
+	border-radius: 6px;
+	box-shadow: 0 0 3px 3px black;
+	transition: all 1s;
+}
+
+.fTambahProduk input{
+	font-family: 'montserrat', sans-serif;
+	width: 50vh;
+	margin: 10px;
+	border-radius: 4px;
+	height: 5vh;
+	padding: 0 5px;
+}
+
+.fTambahProduk textarea#komposisiP{
+	font-family: 'montserrat', sans-serif;
+	width: 50vh;
+	margin: 10px;
+	border-radius: 4px;
+	min-height: 10vh;
+	padding: 2px 5px;
+	border: 2px solid black;
+	resize: none;
+}
+
+.fTambahProduk button{
+	font-family: 'montserrat', sans-serif;
+	padding: 8px;
+	background-color: darkorange;
+	border: none;
+	border-radius: 4px;
+	font-weight: 400;
+}
+
+.fTambahProduk button:hover{
+	font-weight: 700;
+}
+
+.fTambahProduk i{
+	position: absolute;
+	top: 1vh;
+	right: 1vh;
+	transform: scale(1.3);
+}
+
+
+/*LAYANAN*/
+article#layanan{
+	padding-bottom: 15px;
+}
+
+article#layanan h1{
+	margin: 2vh 0 2vh 0;
+	text-align: center;
+	font-weight: 800;
+	font-size: 2em;
+	transition: all 1s;
+}
+
+article#layanan h1:hover{
+	letter-spacing: 5px;
+}
+
+article#layanan .desc-layanan{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+article#layanan .desc-layanan h4{
+	border: 2px solid #cc7b18;
+	padding: 7px 8px;
+	display: inline-block;
+	border-radius: 7px;
+}
+
+article#layanan .desc-layanan p{
+	margin: 5px 0 10px 0;
+}
+
+article#layanan .desc-layanan input{
+	width: 20vw;
+	height: 4vh;
+	border-radius: 6px;
+	padding: 3px;
+	font-family: 'montserrat';
+}
+
+article#layanan .desc-layanan button{
+	width: 8vw;
+	height: 4vh;
+	border-radius: 6px;
+	background-color: #cc7b18;
+	border: none;
+	font-size: 1.01em;
+	font-weight: 600;
+	padding: 3px;
+	font-family: 'montserrat';
+}
+
+article#layanan .desc-layanan .right img{
+	width: 70vh;
+	height: 50vh;
+	object-fit: cover;
+	margin-bottom: 1vh;
+}
+
+article#layanan .desc-layanan .right{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+article#layanan .desc-layanan .right .medsos{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+article#layanan .desc-layanan .right .medsos a{
+	text-decoration: none;
+	color: black;
+	font-weight: 600;
+}
+
+
+/*TENTANG KAMI*/
+article#tentang-kami{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	background-color: rgb(250, 227, 207);
+	padding-bottom: 15px;
+}
+
+article#tentang-kami h1{
+	margin: 2vh 0 2vh 0;
+	text-align: center;
+	font-weight: 800;
+	font-size: 2em;
+	text-transform: uppercase;
+	transition: all 1s;
+}
+
+article#tentang-kami h1:hover{
+	letter-spacing: 5px;
+}
+
+article#tentang-kami .content{
+	display: flex;
+}
+
+article#tentang-kami .content .us{
+	background-color: white;
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 20px;
+	justify-content: space-evenly;
+	margin: 10px;
+}
+
+article#tentang-kami .content .us h3{
+	margin: 5px;
+}
+
+article#tentang-kami .content .us img{
+	display: block;
+	width: 100px;
+	height: 100px;
+	object-fit: cover;
+	border-radius: 50px;
+	box-shadow: 0px 0px 5px black;
+}
+
+article#tentang-kami .content .us table{
+	width: 20vw;
+}
+
+article#tentang-kami .content .us th{
+	width: 30%;
+	text-align: left;
+}
+
+article#tentang-kami .content .us a{
+	color: black;
+	text-decoration: none;
+}
+
+article#tentang-kami .content .us .medsos{
+	background-color: darkorange;
+	text-align: center;
+	font-size: 1.5em;
+}
+
+article#tentang-kami .content .divider{
+	background-color: #9e957b;
+	border-radius: 3px;
+	margin: 15px 0;
+	width: 3px;
+}
+
+/*Footer*/
+
+footer{
+	/*background-color: rgb(237, 231, 225);*/
+	padding: 20px;
+	text-align: center;
+	font-size: .8em;
+}
+
+
+
+/*Responsive*/
+
+@media screen and (max-width: 1110px){
+	/*Navbar*/
+	nav ul{
+		width: 50%;
+		font-size: .9em;
+	}
+
+	/*main*/
+	article#beranda .beranda-desc h1{
+		font-size: 40px;
+	}
+
+	article#beranda .beranda-desc p{
+		font-size: .9em;
+	}
+}
+
+@media screen and (max-width: 900px){
+	/*navbar*/
+	nav ul{
+		/*font-size: .6em;*/
+		position: fixed;
+		width: 60%;
+	}
+
+	/*main*/
+	/*Beranda*/
+	article#beranda{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		align-content: center;
+	}
+
+	article#beranda .beranda-desc {
+		align-items: center;
+		padding-top: 0;
+	}
+
+	article#beranda .beranda-desc h1{
+		font-size: 50px;
+	}
+
+	article#beranda .beranda-desc p{
+		text-align: center;
+	}
+
+	/*Produk*/
+	article#produk .listProduk section{
+		width: 30%;
+	}
+
+	article#produk .listProduk section img{
+		width: 20vh;
+		height: 20vh;
+	}
+
+
+	/*Layanan*/
+	article#layanan .desc-layanan .left{
+		justify-items: center;
+		text-align: center;
+	}
+
+	article#layanan .desc-layanan .right{
+		display: none;
+	}
+
+
+	/*Tentang kami*/
+	article#tentang-kami .content{
+		font-size: .9em;
+	}
+}
+
+@media screen and (max-width: 700px){
+	/*Navbar*/
+	nav ul{
+		font-size: .9em;
+		width: 100%;
+	}
+
+	/*main*/
+	article#beranda .beranda-desc h1{
+		font-size: 40px;
+	}
+
+	/*Produk*/
+	article#produk .listProduk section{
+		font-size: .8e	m;
+		width: 40%;
+	}
+
+}
+
+@media screen and (max-width: 578px){
+	nav{
+		position: static;
+		background-color: rgb(237, 231, 225);
+		z-index: 999;
+	}
+
+	nav .menu-toggle{
+		display: flex;
+		z-index: 3;
+	}
+
+	nav ul{
+		position: fixed;
+		flex-direction: column;
+		background-color: rgb(237, 231, 225);
+		right: 0;
+		top: 0;
+		height: 100vh;
+		justify-content: safe flex-start;
+		align-items: center;
+		padding-top: 10vh;
+		transform: translateX(100%);
+		z-index: 1;
+		opacity: 0;
+	}
+
+	nav ul.slide {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	body.no-scroll{
+		height: 100vh;
+		overflow: hidden;
+	}
+
+	nav .logo img{
+		position: relative;
+		z-index: 5;
+	}
+
+	/*Main*/
+	article#beranda .beranda-desc{
+		z-index: -4;
+		padding: 0 5vh 5vh 5vh;
+	}
+
+	article#beranda .beranda-desc h1{
+		font-size: 22px;
+	}
+
+	article#beranda .beranda-desc p{
+		font-size: 12px;
+	}
+
+	/*Produk*/
+
+	article#produk{
+		z-index: -4;
+	}
+
+	article#produk h1{
+		font-size: 1.4em;
+	}
+
+	article#produk .listProduk{
+		/*z-index: -4;*/
+		justify-content: space-around;
+	}
+
+	article#produk .listProduk section{
+		font-size: .6em;
+		width: 30%;
+		margin: 1%;
+	}
+
+	article#produk .listProduk section img{
+		width: 12vh;
+		height: 12vh;
+	}
+
+	article#produk section.bTambahProduk{
+		min-height: 10vh;
+		font-size: 3em;
+	}
+
+	.fTambahProduk{
+		top: 50vh;
+		width: auto;
+		height: auto;
+		background-color: #faf7f5;
+		padding: 10px;
+		border-radius: 6px;
+		box-shadow: 0 0 3px 3px black;
+	}
+
+	.fTambahProduk h2{
+		font-size: 1.2em;
+	}
+
+	.fTambahProduk input{
+		font-family: 'montserrat', sans-serif;
+		width: 30vh;
+		margin: 5px;
+		border-radius: 4px;
+		height: 5vh;
+		padding: 0 5px;
+	}
+
+	.fTambahProduk textarea#komposisiP{
+		font-family: 'montserrat', sans-serif;
+		width: 30vh;
+		margin: 5px;
+		border-radius: 4px;
+		min-height: 10vh;
+		padding: 2px 5px;
+		border: 2px solid black;
+		resize: none;
+	}
+
+	.fTambahProduk button{
+		font-family: 'montserrat', sans-serif;
+		padding: 8px;
+		background-color: darkorange;
+		border: none;
+		border-radius: 4px;
+		font-weight: 400;
+	}
+
+
+	/*LAYANAN*/
+
+	article#layanan .desc-layanan{
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		font-size: .7em;
+	}
+
+	article#layanan h1{
+		font-size: 1.4em;
+	}
+
+	article#layanan .desc-layanan input{
+		width: 40vw;
+		font-size: .8em;
+	}
+
+	article#layanan .desc-layanan button{
+		width: 14vw;
+	}
+
+	article#layanan .desc-layanan .right{
+		display: none;
+	}
+
+
+	/*TENTANG KAMI*/
+	article#tentang-kami .content{
+		flex-direction: column;
+		font-size: .7em;
+	}
+
+	article#tentang-kami h1{
+		font-size: 1.4em;
+	}
+
+	article#tentang-kami .content .us{
+		padding: 10px;
+		margin: 5px;
+		width: 70vw;
+	}
+
+	article#tentang-kami .content .us img{
+		width: 50px;
+		height: 50px;
+	}
+
+	article#tentang-kami .content .us table{
+		width: 50vw;
+	}
+
+	article#tentang-kami .content .divider{
+		width: 90%;
+		height: 2px;
+		margin: 5px auto;
+	}
+
+	footer{
+		font-size: .6em;
+		padding: 10px;
+	}
+
+}

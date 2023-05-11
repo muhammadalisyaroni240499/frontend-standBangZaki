@@ -1,0 +1,19 @@
+Penggunaan javascript pada projek
+1. Membuat menubar menjadi responsif (baris 1-29)
+cara mengaksesnya ialah dengan merubah tampilan web yang awalnya dekstop menjadi tampilan mobile. Javascript akan memberikan klas slide pada elemen nav dan ul.
+Pada setiap elemen li ditekan, juga menghilangkan status checked pada input pada kelas menu-toggle
+
+2. Membuat 4 produk awal dengan Local Storage
+Fitur ini otomatis akan muncul karena jika local storage tidak ada akan terinisiasi dengan sendiri ketika web dibuka
+
+3. Menampilkan form tambah produk
+Cara mengakses fitur ini dengan mengklik card tambah produk pada bagian Produk. 
+
+4. Menyimpan produk kedalam session storage
+Cara mengakses ini ialah dengan mengisi form tambah produk dan klik simpan. Sistem akan menyimpan isi form kedalam session storage.
+
+5. Menampilkan produk yang baru ditambahkan ke website
+Fitur ini akan otomatis dijalankan setelah menambahkan produk baru.
+
+6. Menghitung ongkir
+Cara mengakses menghitung ongkir, yaitu dengan memasukkan jarak dalam km, kemudian mengklik hitung. Sistem akan menghitung ongkir sesuai jarak.
